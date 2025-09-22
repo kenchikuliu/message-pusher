@@ -1,0 +1,11 @@
+[phases.build]
+aptPkgs = ['ca-certificates', 'tzdata']
+
+[phases.setup]
+nixPkgs = ['nodejs', 'yarn']
+
+[start]
+cmd = './message-pusher --port $PORT'
+
+[variables]
+PORT = '8080'

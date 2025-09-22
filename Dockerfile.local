@@ -1,0 +1,28 @@
+FROM alpine:latest
+
+# 安装必要的依赖
+RUN apk update && \
+    apk add --no-cache ca-certificates tzdata && \
+    update-ca-certificates 2>/dev/null || true
+
+# 设置工作目录
+WORKDIR /app
+
+# 复制已构建的可执行文件
+COPY message-pusher.exe /app/message-pusher
+
+# 复制配置文件
+COPY message-pusher.db /app/message-pusher.db
+
+# 设置执行权限
+RUN chmod +x /app/message-pusher
+
+# 暴露端口
+EXPOSE 3000
+
+# 设置环境变量
+ENV PORT=3000
+ENV TZ=Asia/Shanghai
+
+# 启动命令
+CMD ["/app/message-pusher", "--port", "3000", "--log-dir", "/app/logs"]

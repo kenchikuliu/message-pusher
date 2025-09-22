@@ -4,3 +4,24 @@ upload
 *.exe
 *.db
 build
+
+# Cache directories
+.cache/
+__pycache__/
+.npm/
+.yarn/
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+tmp/
+temp/
+nul
+cookies.txt
+
+# Python cache and bytecode
+*.pyc
+*.pyo
+*.pyd

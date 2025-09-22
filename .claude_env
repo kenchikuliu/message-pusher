@@ -1,0 +1,15 @@
+# Claude Code 全局通知配置
+# Message Pusher API配置
+MESSAGE_PUSHER_API=http://localhost:3000/push/root
+CLAUDE_TASK_TOKEN=claude_task_2025
+FEISHU_CHANNEL=feishu
+
+# 通知脚本路径
+CLAUDE_NOTIFY_SCRIPT=G:\AGI\message-pusher\claude_notify_global.py
+
+# 启用状态
+CLAUDE_NOTIFY_ENABLED=true
+
+# 使用说明:
+# 在Claude Code中调用: python %CLAUDE_NOTIFY_SCRIPT% "任务名" "状态" "详情" "耗时"
+# 或使用: claude-notify "任务名" "状态" "详情" "耗时"

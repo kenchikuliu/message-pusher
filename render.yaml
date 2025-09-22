@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: message-pusher
+    env: docker
+    image: justsong/message-pusher:latest
+    plan: free
+    region: oregon
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: TZ
+        value: Asia/Shanghai
+      - key: SESSION_SECRET
+        generateValue: true
+    disk:
+      name: message-pusher-data
+      mountPath: /data
+      sizeGB: 1
